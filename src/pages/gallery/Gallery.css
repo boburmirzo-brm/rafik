@@ -1,0 +1,241 @@
+/* 
+.gallery{
+    margin-top: -120px;
+
+}
+.gallery_images{
+    width: 100%;
+    padding: 50px 5%;
+    background: var(--bgLight);
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+.gallery_imagesItem{
+    width: 420px;
+    height: 350px;
+    margin: 10px ;
+    overflow: hidden;
+    transition: .5s;
+    cursor: pointer;
+}
+.gallery_imagesItem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallery_imagesItem:hover {
+    transform: scale(1.08);
+}
+.gallery_hidden{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    display: none;
+}
+.gallery_hidden.show{
+    display: flex;
+}
+
+.gallery_hiddenBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000099;
+    animation: galleryBg .5s forwards;
+    opacity: 0;
+}
+@keyframes galleryBg {
+    to{
+        opacity: 1;
+    }
+}
+.gallery_hiddenClose{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 3rem;
+    color: #ddd;
+    z-index: 5;
+    cursor: pointer;
+    transition: .3s;
+}
+.gallery_hiddenClose:hover{
+    color: #fff;
+}
+.gallery_hiddenImage{
+    position: relative;
+    z-index: 5;
+    width: 50%;
+    height: 80vh;
+    animation: galleryShow .5s forwards;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+@keyframes galleryShow {
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.gallery_hiddenImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1600px){
+    .gallery_imagesItem{
+        width: 350px;
+        height: 300px;
+    }
+}
+
+
+
+@media screen and (max-width:600px) {
+    .gallery{
+        margin-top: 80px;
+    }
+    .gallery_images{
+        padding: 50px 2%;
+    }
+    .gallery_imagesItem{
+        width: 100%;
+        height: 340px;
+    }
+    .gallery_imagesItem:hover {
+        transform: scale(1.04);
+    }
+
+
+    .gallery_hidden{
+        top: 80px;
+        align-items: center;
+        height: calc(100vh - 80px);
+    }
+    .gallery_hiddenImage{
+        width: 90%;
+        height: 400px;
+    }
+    .gallery_hiddenClose{
+        top: 10px;
+        right: 10px;
+        font-size: 2rem;
+    }
+}
+
+
+
+ */
+
+
+ .gallery{
+    margin-top: -120px;
+
+}
+
+
+.gallery_wrapper{
+    width: 100%;
+}
+.gallery_wrapperTitle{
+    text-align: center;
+    padding: 30px 0;
+    background: var(--bgLight);
+}
+.gallery_wrapperTitle h1{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: "roboto-thin";
+    letter-spacing: 10px;
+    padding-bottom: 20px;
+    display: inline-block;
+    position: relative;
+}
+.gallery_wrapperTitle h1::before{
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 4px;
+    border-radius: 4px;
+    background: #000;
+}
+.gallery_wrapperTitle p{
+    color: #555;
+    width: 70%;
+    margin: auto;
+}
+.gallery_three{
+    display: flex;
+    margin-top: 4px;
+}
+.gallery_threeItem{
+    width: 100%;
+    height: 400px;
+    margin-right: 4px;
+    overflow: hidden;
+}
+.gallery_threeItem:last-child{
+    margin-right: 0;
+}
+.gallery_threeItem img,
+.gallery_threeItem video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 8s;
+}
+
+.gallery_threeItem:hover img{
+    transform: scale(1.1);
+    filter: grayscale(50%);
+}
+
+
+
+
+
+@media screen and (max-width:1600px) {
+    .gallery_threeItem{
+        height: 320px;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .gallery{
+        margin-top: 80px;
+    }
+    .gallery_wrapperTitle h1{
+        font-size: 2rem;
+    }
+    .gallery_three{
+        flex-direction: column;
+        width: calc(100% - 8px);
+        margin: auto;
+    }
+    .gallery_threeItem{
+        margin-right: 0;
+        margin-top: 4px;
+    }
+}

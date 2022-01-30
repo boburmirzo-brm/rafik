@@ -1,0 +1,22 @@
+
+.carausel{
+    width: 100%;
+    height: 950px;
+}
+.slider{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media screen and (max-width:600px) {
+    .carausel{
+        height: 600px;
+    }
+}

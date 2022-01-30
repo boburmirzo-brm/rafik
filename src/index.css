@@ -1,13 +1,61 @@
-body {
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* 
+
+    Fonts
+
+*/
+
+@font-face {
+  font-family: "Ultra";
+  src: url("./fonts/Ultra/Ultra-Regular.ttf");
 }
+@font-face {
+  font-family: "roboto-thin";
+  src: url("./fonts/Roboto/Roboto-Thin.ttf");
+}
+/* 
+
+    root
+
+*/
+:root{
+  --bgDark: #000;
+  --bgLight: #f7f7f7;
+  --bgGray: #333;
+  --colorLight: #fff;
+  --fontUltra: "Ultra";
+}
+
+
+/* 
+
+    Global CSS
+
+*/
+
+.app{
+  /* background: var(--bgDark); */
+  overflow: hidden;
+}
+::-webkit-scrollbar{
+  width: 4px;
+  background: var(--bgLight);
+}
+::-webkit-scrollbar-thumb{
+  background: #ddd;
+  border-radius: 6px;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+

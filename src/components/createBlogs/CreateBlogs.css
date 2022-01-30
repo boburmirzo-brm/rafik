@@ -1,0 +1,244 @@
+
+.create_blogs{
+    width: 100%;
+    padding-top: 50px;
+}
+
+.create_blogsContainer{
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
+.create_blogsContainerLeft{
+    width: 50%;
+    padding-right: 50px;
+}
+
+.create_blogsItem label{
+    display: block;
+    color: #777;
+    padding-bottom: 10px;
+}
+.create_blogsItem input{
+    width: 100%;
+    height: 40px;
+    text-indent: 12px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 15px #77777733;
+    margin-bottom: 20px;
+    transition: .3s;
+}
+
+.create_blogsItem textarea{
+    width: 100%;
+    height: 250px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 15px #77777733;
+    transition: .3s;
+    padding: 12px;
+    resize: none;
+}
+.create_blogsItem textarea:focus,
+.create_blogsItem input:focus{
+    box-shadow: 0 0 20px #77777748;
+
+}
+.create_blogsContainerRight{
+    width: 50%;
+}
+.create_blogsAll{
+    text-align: center;
+    padding: 50px 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.create_blogsClose{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.create_blogsClose svg{
+    font-size: 22px;
+    color: crimson;
+    transition: .3s;
+    opacity: .7;
+}
+.create_blogsClose svg:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.create_blogsImages{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid dodgerblue;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: #add6ff;
+    transition: .3s;
+}
+.create_blogsImages input{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+.create_blogsImages svg{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: dodgerblue;
+}
+.create_blogsImages:hover{
+    background: dodgerblue;
+}
+.create_blogsImages:hover svg{
+    color: #add6ff;
+}
+.create_blogsImages.selectImage{
+    background: #9dffd1;
+    border: none;
+}
+.create_blogsImages.selectImage svg{
+    color: #03da75;
+}
+
+.create_blogsBtn{
+    height: 40px;
+    width: 150px;
+    display: block;
+    margin: 20px 0;
+    border: 1px solid dodgerblue;
+    outline: none;
+    background-color: dodgerblue;
+    color:#fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+}
+.create_blogsBtn:hover{
+    background-color: #fff;
+    color:dodgerblue;
+}
+
+.create_blogsBtn:disabled{
+    opacity: .6;
+}
+.create_blogsBtn:disabled:hover{
+    background-color: dodgerblue;
+    color:#fff;
+    cursor: no-drop;
+}
+
+.create_blogsHidden{
+    overflow: hidden;
+}
+.create_blogsImageAnime{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #e628ff, #1bf6fd);
+    transition: .3s;
+}
+
+.create_blogsModal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    z-index: 8;
+}
+.create_blogsModalCon{
+    width: 460px;
+    background:#fff;
+    box-shadow:0 0 30px #a5a5a549;
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    animation: create_blogModal .3s forwards;
+    opacity: 0;
+    transform: translateY(-80px);
+}
+@keyframes create_blogModal {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.create_blogsModalCon svg{
+    margin: 30px 0;
+    font-size: 40px;
+    color: crimson;
+}
+.create_blogsModalCon button{
+    width: 120px;
+    height: 38px;
+    margin: 0 10px;
+    border: 1px solid dodgerblue;
+    outline: none;
+    background-color: dodgerblue;
+    color:#fff;
+    border-radius: 4px;
+    transition: .3s;
+}
+.create_blogsModalCon button:hover{
+    background-color: #fff;
+    color:dodgerblue;
+    cursor: pointer;
+}
+.create_blogsModal.modalHidden{
+    display: none;
+}
+.create_blogsModalClose{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:600px){
+    .create_blogsContainer{
+        flex-direction: column;
+    }
+    .create_blogsContainerLeft{
+        width: 100%;
+        padding-right: 0;
+    }
+    .create_blogsContainerRight{
+        width: 100%;
+    }
+}

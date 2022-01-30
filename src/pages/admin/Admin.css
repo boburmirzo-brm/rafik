@@ -1,0 +1,40 @@
+
+.admin{
+    width: 100%;
+    padding: 20px 100px;
+}
+.admin_title{
+    color: coral;
+}
+.admin_navbar{
+    padding-top: 20px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid dodgerblue;
+    margin-bottom: 10px;
+}
+.admin_navbarItem{
+    margin-right: 50px;
+    color: dodgerblue;
+    position: relative;
+}
+.admin_active{
+    font-weight: 600;
+}
+.admin_active::before{
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: dodgerblue;
+    border-radius: 6px 6px 0 0 ;
+}   
+
+
+
+@media screen and (max-width:600px){
+    .admin{
+        padding: 20px 10px;
+    }
+}
