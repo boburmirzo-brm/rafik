@@ -16,6 +16,11 @@ function Blog() {
             )))
         })
     },[])
+
+    console.log("login >>> ", process.env.REACT_APP_LOGIN);
+    console.log("password >>> ", process.env.REACT_APP_PASSWORD);
+    console.log("REACT_APP_API_KEY >>> ", process.env.REACT_APP_API_KEY);
+    console.log("REACT_APP_APP_ID >>> ", process.env.REACT_APP_APP_ID);
   return <div className='blog'>
       <Video name="Blog" video={video}/>
           <div className="gallery_wrapperTitle">
