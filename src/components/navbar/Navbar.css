@@ -6,6 +6,9 @@
     z-index: 15;
     background: linear-gradient(#000000ab,#0000006b, transparent);
 }
+.navbar.navBgdark{
+    background: var(--bgLight);
+}
 
 .nav_container{
     width: 90%;
@@ -17,8 +20,11 @@
 }
 .logo img{
     width: 100px;
-}
 
+}
+.navbar.navBgdark .logo img{
+    filter: invert(50%);
+}
 .nav_collection{
     display: flex;
 }
@@ -35,6 +41,9 @@
     position: relative;
     overflow: hidden;
 }
+.navbar.navBgdark .nav_collectionItem a{
+    color: #aaa;
+}
 .nav_collectionItem a::before{
     content: '';
     position: absolute;
@@ -50,6 +59,9 @@
 .nav_collectionItem a:hover{
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.603);
+}
+.navbar.navBgdark .nav_collectionItem a:hover{
+    color: #ddd;
 }
 .nav_collectionItem a:hover::before{
     transform: scaleX(1);

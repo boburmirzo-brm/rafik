@@ -15,7 +15,7 @@ function Navbar() {
     }else{
     return (
     
-        <div className="navbar">
+        <div className={location.pathname === "/contact"? "navbar navBgdark":"navbar"} >
          
             <div className="nav_container">
                 <div className="nav_logo">
