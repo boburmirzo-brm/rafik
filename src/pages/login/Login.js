@@ -19,7 +19,11 @@ function Login() {
     })
     result && history.push("/approuter/admin/createblogs")
   }
-  console.log(result);
+  console.log("result >>>", result);
+  console.log("login >>> ", process.env.REACT_APP_LOGIN);
+  console.log("password >>> ", process.env.REACT_APP_PASSWORD);
+  console.log("REACT_APP_API_KEY >>> ", process.env.REACT_APP_API_KEY);
+  console.log("REACT_APP_APP_ID >>> ", process.env.REACT_APP_APP_ID);
 
   return <div className='login'>
       <div className="login_container">
