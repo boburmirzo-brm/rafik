@@ -47,6 +47,11 @@ function Navbar() {
                                 Gallery
                             </Link>
                         </li>
+                        <li className="nav_collectionItem">
+                            <Link to="/contact">
+                                Contact Us
+                            </Link>
+                        </li>
                         <ul className="nav_icons">
                             <li><a href="https://kun.uz"><BsFacebook/> </a></li>
                             <li><a href="https://kun.uz"><BsInstagram/> </a></li>
