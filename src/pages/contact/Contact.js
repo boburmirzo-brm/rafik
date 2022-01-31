@@ -1,8 +1,7 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import "./Contact.css"
 import img55 from "../../assets/photos/IMG_4632.JPG"
 import {db} from "../../server/firebase"
-import { useState } from 'react/cjs/react.development';
 import firebase from "firebase";
 
 function Contact() {
