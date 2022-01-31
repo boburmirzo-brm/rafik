@@ -19,6 +19,7 @@ function Login() {
     })
     result && history.push("/approuter/admin/createblogs")
   }
+  console.log(result);
 
   return <div className='login'>
       <div className="login_container">
