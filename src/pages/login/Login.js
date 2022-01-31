@@ -17,7 +17,7 @@ function Login() {
       type:"CHECK",
       user:result
     })
-    result && history.push("/approuter/admin")
+    result && history.push("/approuter/admin/createblogs")
   }
 
   return <div className='login'>

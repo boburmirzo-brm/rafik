@@ -1,3 +1,69 @@
 .get_contact{
     width: 100%;
 }
+.get_contactContainer{
+    width: 80%;
+    margin: auto;
+}
+.get_contactTitle{
+    text-align: center;
+    font-weight: 300;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    color: dodgerblue;
+}
+.get_contactItem{
+    width: 100%;
+    padding: 30px;
+    box-shadow: 0 0 15px #00000020;
+    background: #fff;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    transition: .3s;
+    position: relative;
+}
+.get_contactItem:hover{
+    box-shadow: 0 0 25px #00000030;
+}
+.get_contactItemName{
+    font-size: 16px;
+    padding-bottom: 30px;
+    color: #999;
+}
+.get_contactItemName b{
+    color: #555;
+}
+.get_contactItemMesTitle{
+    font-size: 14px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 8px;
+    color: #999;
+}
+.get_contactItemMes{
+    letter-spacing: 1px;
+    word-spacing: 12px;
+    line-height: 1.6;
+}
+.get_contactItemEmail{
+    margin-top: 30px;
+    padding-top: 5px;
+    color: #999;
+    border-top: 1px solid #ccc;
+}
+.get_contactItemEmail a{
+    color: dodgerblue;
+}
+.get_contactItemEmail a:hover{
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width:600px) {
+    .get_contactContainer{
+        width: 97%;
+    }
+    .get_contactItem{
+        padding: 30px 16px;
+    }
+}
