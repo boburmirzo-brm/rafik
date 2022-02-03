@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle, #888, #555);
+    background: #eee;
 }
 
 .lds-spinner {
@@ -27,7 +27,7 @@
     width: 6px;
     height: 18px;
     border-radius: 20%;
-    background: #fff;
+    background: #aaa;
   }
   .lds-spinner div:nth-child(1) {
     transform: rotate(0deg);
