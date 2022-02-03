@@ -154,9 +154,9 @@
 
 .gallery_wrapper{
     width: 100%;
-    background: linear-gradient(90deg, #bbb, #eee, #bbb);
+    background: linear-gradient(90deg, #777, #eee, #bbb);
     background-size: 200%;
-    animation: galleryBg 1.5s linear infinite;
+    animation: galleryBg 2s linear infinite;
 }
 @keyframes galleryBg {
     0%{
