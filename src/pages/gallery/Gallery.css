@@ -154,6 +154,17 @@
 
 .gallery_wrapper{
     width: 100%;
+    background: linear-gradient(90deg, #bbb, #eee, #bbb);
+    background-size: 200%;
+    animation: galleryBg 1.5s linear infinite;
+}
+@keyframes galleryBg {
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 200%;
+    }
 }
 .gallery_wrapperTitle{
     text-align: center;
