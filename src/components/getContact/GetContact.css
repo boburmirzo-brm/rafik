@@ -45,12 +45,15 @@
     word-spacing: 12px;
     line-height: 1.6;
 }
-.get_contactItemEmail{
+.get_contactItemBottom{
+    display: flex;
+    justify-content: space-between;
     margin-top: 30px;
     padding-top: 5px;
     color: #999;
     border-top: 1px solid #ccc;
 }
+
 .get_contactItemEmail a{
     color: dodgerblue;
 }

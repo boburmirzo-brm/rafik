@@ -132,6 +132,14 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: .3s;
+    position: relative;
+}
+.create_blogsBtn span{
+    transition: .3s;
+    margin-left: 0;
+}
+.create_blogsBtn.createBtnLeft span{
+    margin-left: 20px;
 }
 .create_blogsBtn:hover{
     background-color: #fff;

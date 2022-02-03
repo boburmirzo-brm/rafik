@@ -1,6 +1,5 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { NavLink, useRouteMatch, Route } from 'react-router-dom';
-import Loader from '../../components/loader/Loader';
 import './Admin.css'
 
 const CreateBlogs = React.lazy(() => import('../../components/createBlogs/CreateBlogs')); // Lazy-loaded
@@ -19,10 +18,8 @@ function Admin() {
           Contact me
         </NavLink>
       </div>
-      <Suspense fallback={<Loader/>}>
-        <Route path={`${url}/createblogs`} component={CreateBlogs} />
-        <Route path={`${url}/getcontact`} component={GetContact} />
-      </Suspense>
+      <Route path={`${url}/createblogs`} component={CreateBlogs} />
+      <Route path={`${url}/getcontact`} component={GetContact} />
   </div>;
 }
 

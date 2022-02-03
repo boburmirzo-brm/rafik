@@ -26,7 +26,7 @@ function Contact() {
     }
 
 return <div className='contact'>
-      <h1 className='contact_title'>Contact Us</h1>
+      <h1 className='contact_title'>Messages</h1>
       <div className="contact_container">
           <div className="contact_form">
               <form onSubmit={senMessage} action="">

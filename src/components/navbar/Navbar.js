@@ -33,22 +33,22 @@ function Navbar() {
                     <div onClick={()=> setMenu(prev => !prev)} className={menu ? "nav_shadow nav_active" : "nav_shadow"}></div>
                     <ul className={menu ? "nav_collection nav_active": "nav_collection"}>
                         <li className="nav_collectionItem">
-                            <Link to="/">
+                            <Link onClick={()=>setMenu(false)} to="/">
                                 Home
                             </Link>
                         </li>
                         <li className="nav_collectionItem">
-                            <Link to="/blog">
+                            <Link onClick={()=>setMenu(false)} to="/blog">
                                 Blog
                             </Link>
                         </li>
                         <li className="nav_collectionItem">
-                            <Link to="/gallery">
+                            <Link onClick={()=>setMenu(false)} to="/gallery">
                                 Gallery
                             </Link>
                         </li>
                         <li className="nav_collectionItem">
-                            <Link to="/contact">
+                            <Link onClick={()=>setMenu(false)} to="/contact">
                                 Contact Us
                             </Link>
                         </li>

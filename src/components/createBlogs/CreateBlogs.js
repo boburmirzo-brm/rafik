@@ -5,7 +5,8 @@ import firebase from "firebase";
 import {FaTrashAlt} from 'react-icons/fa'
 import {IoMdPhotos} from 'react-icons/io'
 import defaultImage from "../../assets/photos/default.jpg"
-
+import LoaderData from "../loader/LoaderData"
+import LoaderItem from "../loader/LoaderItem";
 
 
 function CreateBlogs() {
@@ -31,7 +32,7 @@ function CreateBlogs() {
   },[])
   const uploadImage = () => {
       if(!image){
-          alert("Biror rasm tanlang")
+          alert("Select an image")
           return;
       }
       setLoading(true)
@@ -109,7 +110,7 @@ function CreateBlogs() {
 
           </div>
 
-          <button className="create_blogsBtn" disabled={loading}  onClick={uploadImage}>{loading? "Loading..." : "Upload image"} </button>
+          <button className={loading?"create_blogsBtn createBtnLeft":"create_blogsBtn"} disabled={loading}  onClick={uploadImage}>{loading? <LoaderItem/> : ""} <span>Upload image</span></button>
 
           <button className="create_blogsBtn" disabled={url === ""} onClick={addDate}>Submit</button>
         </div>
@@ -129,6 +130,7 @@ function CreateBlogs() {
       <h2 className="create_blogsAll">All Blogs</h2>
       <div className="create_blogsGet">
           {
+            data.length ?
             [...data].reverse()?.map((item,inx)=>(
                 <div key={inx} className={item.data.desc.length > 1200 ? "blog_conItem long" : "blog_conItem" }>
                     <div onClick={()=>{
@@ -146,19 +148,19 @@ function CreateBlogs() {
                     </div>
                   
                  </div>
-            ))
+            )): <LoaderData/>
           }
       </div>
       <div className={modalShow? "create_blogsModal ": "create_blogsModal modalHidden" }>
                         <div className="create_blogsModalCon">
-                            <h3>Ishonchingiz komilmi ?</h3>
+                            <h3>Are you sure ?</h3>
                             <FaTrashAlt/>
                             <div>
                                 <button onClick={()=> {
                                     deleteBlog(uid)
                                     setmodalShow(false)
-                                }}>Ha</button>
-                                <button onClick={()=> setmodalShow(false)}>Yo'q</button>
+                                }}>Yes</button>
+                                <button onClick={()=> setmodalShow(false)}>No</button>
                             </div>
                         </div>
                         <div className="create_blogsModalClose"></div>
