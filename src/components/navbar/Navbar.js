@@ -53,9 +53,9 @@ function Navbar() {
                             </Link>
                         </li>
                         <ul className="nav_icons">
-                            <li><a href="https://kun.uz"><BsFacebook/> </a></li>
-                            <li><a href="https://kun.uz"><BsInstagram/> </a></li>
-                            <li><a href="https://kun.uz"><BsTelegram/> </a></li>
+                            <li><a href="https://www.facebook.com/rafik.bannaev"><BsFacebook/> </a></li>
+                            <li><a href="https://www.instagram.com/rafikbannaev"><BsInstagram/> </a></li>
+                            <li><a href="https://t.me/CaHiTT"><BsTelegram/> </a></li>
                         </ul>
                     </ul>
                 </div>

@@ -36,18 +36,18 @@ function GetContact() {
           </h1>
           {
              data.length ?
-            [...data].reverse()?.map((item, inx)=>(
+            [...data].reverse()?.map(({data, uniqueId}, inx)=>(
               <div key={inx} className="get_contactItem">
-                <p className='get_contactItemName'>Name: <b>{item.data.name}</b></p>
+                <p className='get_contactItemName'>Name: <b>{data.name}</b></p>
                 <p className='get_contactItemMesTitle'>Message:</p>
-                <p className='get_contactItemMes'>{item.data.message}</p>
+                <p className='get_contactItemMes'>{data.message}</p>
                 <div className='get_contactItemBottom'>
-                  <p className='get_contactItemEmail'>Email: <a rel="noreferrer" target="_blank" href={`https://${item.data.email}`}>{item.data.email}</a></p>
-                  <p>{(item.data.createAt + "").split(' ')[2] + " " + (item.data.createAt + "").split(' ')[1] + " " +  (item.data.createAt + "").split(' ')[3]  }</p>
+                  <p className='get_contactItemEmail'>Email: <a rel="noreferrer" target="_blank" href={`https://${data.email}`}>{data.email}</a></p>
+                  <p>{(data.createAt + "").split(' ')[2] + " " + (data.createAt + "").split(' ')[1] + " " +  (data.createAt + "").split(' ')[3]  }</p>
                 </div>
                 <div onClick={()=>{   
                        setmodalShow(true)
-                       setuid(item.uniqueId)  
+                       setuid(uniqueId)  
                     }} className="create_blogsClose">
                         <FaTrashAlt/>
                     </div>
