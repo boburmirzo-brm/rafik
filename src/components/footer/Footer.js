@@ -6,9 +6,9 @@ function Footer() {
   return <div className='footer'>
       <h2>Follow</h2>
       <div className="footer_icons">
-          <a href="https://kun.uz"><BsFacebook/> </a>
-          <a href="https://kun.uz"><BsInstagram/> </a>
-          <a href="https://kun.uz"><BsTelegram/> </a>
+          <a href="https://www.facebook.com/rafik.bannaev" rel="noreferrer" target="_blank"><BsFacebook/> </a>
+          <a href="https://www.instagram.com/rafikbannaev" rel="noreferrer" target="_blank"><BsInstagram/> </a>
+          <a href="https://t.me/CaHiTT" rel="noreferrer" target="_blank"><BsTelegram/> </a>
       </div>
   </div>;
 }
