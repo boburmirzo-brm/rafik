@@ -11,10 +11,14 @@ function Blog() {
   const [blogs, setBlogs] = useState([])
   const [videoUrl, setVideoUrl] = useState(null)
 
+
     useEffect(()=>{
         db.collection("blogs").orderBy("createAt").onSnapshot(data=>{
             setBlogs(data.docs.map(item=>(
-                item.data()
+              {
+                id: item.id,
+                data: item.data()
+              }
             )))
         })
     },[])
@@ -24,6 +28,7 @@ function Blog() {
       ))
     },[])
 
+    // console.log(blogs)
   return <div className='blog'>
       <Video name="Blog" video={videoUrl}/>
           <div className="gallery_wrapperTitle">
@@ -33,6 +38,7 @@ function Blog() {
           {
             blogs.length ? <BlogCon blogs={[...blogs].reverse()}/> : <LoaderData/>
           }
+          
       <Footer/>
   </div>;
 }

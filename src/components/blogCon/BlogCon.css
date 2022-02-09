@@ -65,6 +65,18 @@
     margin-top: 20px;
 }
 
+.blog_heart {
+    position: absolute;
+    bottom: 4px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.blog_heart span {
+    font-size: 14px;
+    margin: 0 5px;
+}
+
 
 
 @media screen and (max-width:990px) {
