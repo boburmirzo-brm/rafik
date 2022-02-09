@@ -4,9 +4,10 @@ import './GalleryTwo.css'
 
 
 function GallaryTwo({imgs}) {
+    const  {loader, bool, one, two, three} = imgs;
   return  <div className="gallery_two">
       {
-          imgs.loader?
+          loader?
           <>
           <div className="gallery_twoBig">
               <LoaderImage/>
@@ -21,19 +22,19 @@ function GallaryTwo({imgs}) {
           </div>
           </>
           :
-          imgs.bool ? 
+          bool ? 
           <>
             <div className="gallery_twoBig">
                 {
-                    imgs.one? <img src={imgs.one} alt="" />: <LoaderImage/>
+                    one? <img src={one} alt="" />: <LoaderImage/>
                 }
             </div>
             <div className="gallery_twoSmall">
                 <div className="gallery_twoSmallItem">
-                    <img src={imgs.two} alt="" />
+                    <img src={two} alt="" />
                 </div>
                 <div className="gallery_twoSmallItem">
-                    <img src={imgs.three} alt="" />
+                    <img src={three} alt="" />
                 </div>
             </div>
             </>
@@ -41,14 +42,14 @@ function GallaryTwo({imgs}) {
             <>
                 <div className="gallery_twoSmall">
                     <div className="gallery_twoSmallItem">
-                        <img src={imgs.two} alt="" />
+                        <img src={two} alt="" />
                     </div>
                     <div className="gallery_twoSmallItem">
-                        <img src={imgs.three} alt="" />
+                        <img src={three} alt="" />
                     </div>
                 </div>
                 <div className="gallery_twoBig marg">
-                    <img src={imgs.one} alt="" />
+                    <img src={one} alt="" />
                 </div>
             </>
       }
