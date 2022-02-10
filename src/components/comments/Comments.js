@@ -15,6 +15,15 @@ function Comments({ close, uId, blogs }) {
     setDataComments(blogs?.filter((item) => item.id === uId));
   }, [blogs, uId]);
 
+
+
+
+  const ctrlPlusEnter = (e) => {
+    if(e.ctrlKey && e.keyCode === 13){
+        handleAddComments(dataComments[0]?.data.comments)
+    }
+}
+
 //   console.log(dataComments[0]?.data.comments.reverse())
   const handleAddComments = async (comments) => {
       if(!msg){
@@ -57,6 +66,7 @@ function Comments({ close, uId, blogs }) {
           <textarea
             value={msg}
             onChange={(e) => setMsg(e.target.value)}
+            onKeyDown={(e)=> ctrlPlusEnter(e)}
             name=""
             id=""
             cols="30"
