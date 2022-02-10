@@ -15,6 +15,9 @@ function BlogCon({ blogs }) {
 
   document.body.style.overflow = commentShow ? "hidden" : "auto"
 
+  console.log(123);
+
+
   const handleIsLike = async (id, likeCount) => {
     if (user) {
       if (!likeCount.includes(user.email)) {

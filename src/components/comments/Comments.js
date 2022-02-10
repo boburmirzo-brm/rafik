@@ -16,7 +16,7 @@ function Comments({ close, uId, blogs }) {
     setDataComments(blogs?.filter((item) => item.id === uId));
   }, [blogs, uId]);
 
-
+  console.log(123);
 
 
   const ctrlPlusEnter = (e) => {
