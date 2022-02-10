@@ -6,6 +6,7 @@ import { BiCommentDetail } from "react-icons/bi";
 import { auth, provider } from "../../server/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
+
 function BlogCon({ blogs }) {
   const [user] = useAuthState(auth);
   console.log(user);
@@ -52,6 +53,8 @@ function BlogCon({ blogs }) {
     }
   };
 
+  console.log("github");
+
   return (
     <div className="blog_con">
       <div className="blog_conContainer">
@@ -96,10 +99,11 @@ function BlogCon({ blogs }) {
                 />
               )}
               <span>{data.likeCount.length}</span>{" "}
-              <BiCommentDetail onClick={() => window.alert("coming soon")} />
+              <BiCommentDetail onClick={() => window.alert("coming ???")} />
             </div>
           </div>
         ))}
+
       </div>
     </div>
   );
