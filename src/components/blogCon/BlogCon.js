@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./BlogCon.css";
 import firebase from "firebase";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
@@ -7,7 +7,6 @@ import { auth, provider } from "../../server/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 function BlogCon({ blogs }) {
-  // const [isLike, setIsLike] = useState(false);
   const [user] = useAuthState(auth);
   console.log(user);
 
@@ -48,7 +47,6 @@ function BlogCon({ blogs }) {
             console.log("Error increasing document:", error);
           });
       }
-      // setIsLike(!isLike);
     } else {
       await auth.signInWithPopup(provider);
     }
@@ -98,7 +96,7 @@ function BlogCon({ blogs }) {
                 />
               )}
               <span>{data.likeCount.length}</span>{" "}
-              <BiCommentDetail onClick={() => window.alert("Salom")} />
+              <BiCommentDetail onClick={() => window.alert("coming soon")} />
             </div>
           </div>
         ))}

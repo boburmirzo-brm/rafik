@@ -67,6 +67,7 @@ function CreateBlogs() {
       title,
       desc,
       url,
+      likeCount: [],
       createAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setTitle("");
