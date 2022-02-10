@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 112;
 }
 .comments_container{
     width: 500px;
@@ -14,7 +15,38 @@
     background-color: #fff;
     border-radius: 10px;
     position: relative;
+    padding: 20px;
     z-index: 2;
+}
+.comments_close_btn {
+    position: absolute;
+    top: -25px;
+    right: -10px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+.comments_close_btn svg {
+    color: #ddd;
+    font-size: 22px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.comments_close_btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.comments_close_btn:active{
+    color: #fff;
 }
 .comments_shadow{
     position: absolute;
@@ -27,3 +59,138 @@
 }
 
 
+.commonts_send {
+    height: 100px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+.commonts_send textarea {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    border: none;
+    resize: none;
+    box-shadow: 0 0 15px hsla(0, 0%, 50%, 0.308);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    outline: none;
+    padding: 10px;
+}
+.commonts_send button {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0px 6px;
+    cursor: pointer;
+
+}
+.commonts_send button svg {
+    font-size: 24px;
+    color: #666;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+.commonts_send button:hover svg {
+    color: #000;
+}
+
+.commonts_send button:active svg {
+    color: dodgerblue;
+}
+.comments_items {
+    width: 100%;
+    height: calc(100% - 120px);
+    overflow: auto;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 15px;
+}
+.comments_item {
+    box-shadow: 0 0 15px hsla(0, 0%, 50%, 0.308);
+    display: flex;
+    margin-bottom: 16px;
+    padding: 8px;
+}
+
+.comments_user_img {
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+}
+.comments_user_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.comments_user_msg {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #000; */
+    width: calc(100% - 76px);
+}
+.comments_user_email_time {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #666;
+}
+.comments_user_msg > p {
+    flex-grow: 1;
+    padding-bottom: 16px;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+    .comments_container {
+        width: 90%;
+        height: 80vh;
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .comments_item {
+        flex-direction: column;
+    }
+    .comments_user_msg{
+        width: 100%;
+    }
+    .comments_user_img {
+        margin: auto;
+    }
+}
+@media screen and (max-width: 350px){
+    .comments_user_email_time {
+        flex-direction: column;
+        font-size: 10px;
+    }
+    .comments_user_msg > p {
+        font-size: 13px;
+    }
+    .commonts_send textarea::placeholder, .commonts_send textarea {
+        font-size: 12px;
+    }
+}

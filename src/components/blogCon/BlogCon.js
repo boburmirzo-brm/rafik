@@ -15,7 +15,7 @@ function BlogCon({ blogs }) {
 
   document.body.style.overflow = commentShow ? "hidden" : "auto"
 
-  const handleIsLike = async (id, likeCount, title, desc, url) => {
+  const handleIsLike = async (id, likeCount) => {
     if (user) {
       if (!likeCount.includes(user.email)) {
         firebase
@@ -23,9 +23,6 @@ function BlogCon({ blogs }) {
           .collection("blogs")
           .doc(id)
           .update({
-            title,
-            desc,
-            url,
             likeCount: [...likeCount, user.email],
           })
           .then(() => {
@@ -40,9 +37,6 @@ function BlogCon({ blogs }) {
           .collection("blogs")
           .doc(id)
           .update({
-            title,
-            desc,
-            url,
             likeCount: [...likeCount].filter((i) => i !== user.email),
           })
           .then(() => {
@@ -82,9 +76,6 @@ function BlogCon({ blogs }) {
                     handleIsLike(
                       id,
                       data.likeCount,
-                      data.title,
-                      data.desc,
-                      data.url
                     )
                   }
                 />
@@ -94,9 +85,6 @@ function BlogCon({ blogs }) {
                     handleIsLike(
                       id,
                       data.likeCount,
-                      data.title,
-                      data.desc,
-                      data.url
                     )
                   }
                 />
