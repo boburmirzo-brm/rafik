@@ -1,15 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import "./BlogCon.css";
 import firebase from "firebase";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { BiCommentDetail } from "react-icons/bi";
 import { auth, provider } from "../../server/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Comments from "../comments/Comments";
 
 
 function BlogCon({ blogs }) {
+  const [commentShow, setCommentShow] = useState(false)
+  const [uId, setUId] = useState(null)
   const [user] = useAuthState(auth);
-  console.log(user);
+
+  document.body.style.overflow = commentShow ? "hidden" : "auto"
 
   const handleIsLike = async (id, likeCount, title, desc, url) => {
     if (user) {
@@ -53,7 +57,6 @@ function BlogCon({ blogs }) {
     }
   };
 
-  console.log("github fix");
 
   return (
     <div className="blog_con">
@@ -74,7 +77,7 @@ function BlogCon({ blogs }) {
             </div>
             <div className="blog_heart">
               {!data?.likeCount.includes(user?.email) ? (
-                <AiFillHeart
+                <AiOutlineHeart
                   onClick={() =>
                     handleIsLike(
                       id,
@@ -86,7 +89,7 @@ function BlogCon({ blogs }) {
                   }
                 />
               ) : (
-                <AiOutlineHeart
+                <AiFillHeart
                   onClick={() =>
                     handleIsLike(
                       id,
@@ -99,12 +102,19 @@ function BlogCon({ blogs }) {
                 />
               )}
               <span>{data.likeCount.length}</span>{" "}
-              <BiCommentDetail onClick={() => window.alert("coming soon")} />
+              <BiCommentDetail onClick={() =>{
+                  setCommentShow(true)
+                  setUId(id)
+                  }} />
             </div>
           </div>
         ))}
 
       </div>
+      {
+          commentShow &&   <Comments blogs={blogs} uId={uId} close={setCommentShow}/>
+      }
+    
     </div>
   );
 }
