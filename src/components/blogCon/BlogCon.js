@@ -7,13 +7,13 @@ import { auth, provider } from "../../server/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 function BlogCon({ blogs }) {
-  const [isLike, setIsLike] = useState(false);
+  // const [isLike, setIsLike] = useState(false);
   const [user] = useAuthState(auth);
   console.log(user);
 
   const handleIsLike = async (id, likeCount, title, desc, url) => {
     if (user) {
-      if (!isLike) {
+      if (!likeCount.includes(user.email)) {
         firebase
           .firestore()
           .collection("blogs")
@@ -22,7 +22,7 @@ function BlogCon({ blogs }) {
             title,
             desc,
             url,
-            likeCount: likeCount + 1,
+            likeCount: [...likeCount, user.email],
           })
           .then(() => {
             console.log("successfully increased! ");
@@ -39,7 +39,7 @@ function BlogCon({ blogs }) {
             title,
             desc,
             url,
-            likeCount: likeCount - 1,
+            likeCount: [...likeCount].filter((i)=> i!==user.email),
           })
           .then(() => {
             console.log("successfully decreased! ");
@@ -48,7 +48,7 @@ function BlogCon({ blogs }) {
             console.log("Error increasing document:", error);
           });
       }
-      setIsLike(!isLike);
+      // setIsLike(!isLike);
     } else {
       await auth.signInWithPopup(provider);
     }
@@ -72,7 +72,7 @@ function BlogCon({ blogs }) {
               <img src={data.url} alt="" />
             </div>
             <div className="blog_heart">
-              {!isLike ? (
+              {!data?.likeCount.includes(user?.email) ? (
                 <AiOutlineHeart
                   onClick={() =>
                     handleIsLike(
@@ -97,7 +97,7 @@ function BlogCon({ blogs }) {
                   }
                 />
               )}
-              <span>{data.likeCount}</span>{" "}
+              <span>{data.likeCount.length}</span>{" "}
               <BiCommentDetail onClick={() => window.alert("Salom")} />
             </div>
           </div>
