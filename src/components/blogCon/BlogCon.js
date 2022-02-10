@@ -38,7 +38,7 @@ function BlogCon({ blogs }) {
             title,
             desc,
             url,
-            likeCount: [...likeCount].filter((i)=> i!==user.email),
+            likeCount: [...likeCount].filter((i) => i !== user.email),
           })
           .then(() => {
             console.log("successfully decreased! ");
