@@ -53,7 +53,7 @@ function BlogCon({ blogs }) {
     }
   };
 
-  console.log("github");
+  console.log("github fix");
 
   return (
     <div className="blog_con">
@@ -74,7 +74,7 @@ function BlogCon({ blogs }) {
             </div>
             <div className="blog_heart">
               {!data?.likeCount.includes(user?.email) ? (
-                <AiOutlineHeart
+                <AiFillHeart
                   onClick={() =>
                     handleIsLike(
                       id,
@@ -86,7 +86,7 @@ function BlogCon({ blogs }) {
                   }
                 />
               ) : (
-                <AiFillHeart
+                <AiOutlineHeart
                   onClick={() =>
                     handleIsLike(
                       id,
@@ -99,7 +99,7 @@ function BlogCon({ blogs }) {
                 />
               )}
               <span>{data.likeCount.length}</span>{" "}
-              <BiCommentDetail onClick={() => window.alert("coming ???")} />
+              <BiCommentDetail onClick={() => window.alert("coming soon")} />
             </div>
           </div>
         ))}
