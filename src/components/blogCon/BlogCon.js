@@ -90,9 +90,14 @@ function BlogCon({ blogs }) {
                 />
               )}
               <span>{data.likeCount.length}</span>{" "}
-              <BiCommentDetail className="blog_commnetSvg" onClick={() =>{
+              <BiCommentDetail className="blog_commnetSvg" onClick={async () =>{
+                if(user){
                   setCommentShow(true)
                   setUId(id)
+                } else {
+                  await auth.signInWithPopup(provider)
+                }
+                  
                   }} />
                 <span>{data.comments.length}</span>
             </div>

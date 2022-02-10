@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { FiX } from "react-icons/fi";
 import "./Comments.css";
-import { auth } from "../../server/firebase";
+import { auth} from "../../server/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "firebase";
 
