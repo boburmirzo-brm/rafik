@@ -90,10 +90,11 @@ function BlogCon({ blogs }) {
                 />
               )}
               <span>{data.likeCount.length}</span>{" "}
-              <BiCommentDetail onClick={() =>{
+              <BiCommentDetail className="blog_commnetSvg" onClick={() =>{
                   setCommentShow(true)
                   setUId(id)
                   }} />
+                <span>{data.comments.length}</span>
             </div>
           </div>
         ))}

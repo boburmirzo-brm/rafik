@@ -76,8 +76,15 @@
     font-size: 14px;
     margin: 0 5px;
 }
-
-
+.blog_commnetSvg{
+    margin-left: 15px;
+}
+.blog_heart svg{
+    cursor: pointer;
+}
+.blog_heart svg:hover{
+    color:#666;
+}
 
 @media screen and (max-width:990px) {
     .blog_conItemText{
