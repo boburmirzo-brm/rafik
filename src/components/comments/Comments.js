@@ -5,6 +5,7 @@ import "./Comments.css";
 import { auth} from "../../server/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "firebase";
+import {v4} from "uuid"
 
 function Comments({ close, uId, blogs }) {
   const [user] = useAuthState(auth);
@@ -38,6 +39,7 @@ function Comments({ close, uId, blogs }) {
         comments: [
           ...comments,
           {
+            id: v4(),
             email: user.email,
             url: user.photoURL,
             time: `${
