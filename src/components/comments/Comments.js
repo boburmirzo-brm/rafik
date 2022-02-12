@@ -32,7 +32,7 @@ function Comments({ close, uId, blogs } ) {
 
 //   console.log(dataComments[0]?.data.comments.reverse())
   const handleAddComments = async (comments) => {
-      if(!msg){
+      if(!msg.trim()){
           alert("Please write your comments...");
           return;
       }
@@ -50,7 +50,7 @@ function Comments({ close, uId, blogs } ) {
             time: `${
               new Date().getMonth() + 1
             }.${new Date().getDate()}.${new Date().getFullYear()}`,
-            message: msg,
+            message: msg.trim(),
           },
         ],
       })
@@ -69,7 +69,7 @@ function Comments({ close, uId, blogs } ) {
     .collection("blogs")
     .doc(uId)
     .update({
-      comments: comments.filter(item=> item.id !== id)
+      comments: comments.filter(item=> item.id !== id).reverse()
     })
     .then(() => {
       console.log("successfully sent! ");
