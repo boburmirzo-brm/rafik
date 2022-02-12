@@ -96,11 +96,11 @@ function Comments({ close, uId, blogs } ) {
             rows="10"
             placeholder="leave your comments..."
           ></textarea>
-          <button
+          {msg.trim() && <button
             onClick={() => handleAddComments(dataComments[0]?.data.comments)}
           >
             <RiSendPlaneFill />
-          </button>
+          </button>}
         </div>
         <div className="comments_items">
           {dataComments[0]?.data.comments ? [...dataComments[0]?.data.comments].reverse().map(

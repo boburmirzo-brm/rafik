@@ -56,6 +56,9 @@
     margin-bottom: 20px;
     transition: .3s;
 }
+.contact_formItem textarea::placeholder {
+    color: #bbb;
+}
 .contact_formItem input:focus,
 .contact_formItem textarea:focus{
     box-shadow: 0 0 20px #00000023;

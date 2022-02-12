@@ -65,7 +65,7 @@ function Contact() {
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="After writing your message, you can send it with 'ctrl + enter'... "
+                placeholder="leave your message..."
                 onke
                 required
                 name=""
