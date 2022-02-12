@@ -36,7 +36,7 @@ function Blog() {
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
           </div>
           {
-            blogs.length ? <BlogCon blogs={[...blogs].reverse()}/> : <LoaderData/>
+            blogs.length ? <BlogCon blogs={[...blogs].reverse()} func={{admin:false}}/> : <LoaderData/>
           }
           
       <Footer/>

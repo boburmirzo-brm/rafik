@@ -4,19 +4,24 @@ import { FiX } from "react-icons/fi";
 import "./Comments.css";
 import { auth} from "../../server/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useLocation } from "react-router-dom";
 import firebase from "firebase";
 import {v4} from "uuid"
+import { FaTrashAlt } from "react-icons/fa";
 
-function Comments({ close, uId, blogs }) {
+function Comments({ close, uId, blogs } ) {
   const [user] = useAuthState(auth);
   const [dataComments, setDataComments] = useState([]);
   const [msg, setMsg] = useState("");
 
-  useEffect(() => {
-    setDataComments(blogs?.filter((item) => item.id === uId));
-  }, [blogs, uId]);
+  const location = useLocation()
 
-  console.log(123);
+  useEffect(() => {
+    blogs[0].id ?
+    setDataComments(blogs?.filter((item) => item.id === uId))
+    :
+    setDataComments(blogs?.filter((item) => item.uniqueId === uId))
+  }, [blogs, uId]);
 
 
   const ctrlPlusEnter = (e) => {
@@ -51,12 +56,28 @@ function Comments({ close, uId, blogs }) {
       })
       .then(() => {
         console.log("successfully sent! ");
-        setMsg("");
       })
       .catch((error) => {
         console.log("Error message:", error);
       });
+      setMsg("");
   };
+
+  const commentDel = (id, comments)=>{
+    firebase
+    .firestore()
+    .collection("blogs")
+    .doc(uId)
+    .update({
+      comments: comments.filter(item=> item.id !== id)
+    })
+    .then(() => {
+      console.log("successfully sent! ");
+    })
+    .catch((error) => {
+      console.log("Error message:", error);
+    });
+  }
 
   return (
     <div className="comments_main">
@@ -83,7 +104,7 @@ function Comments({ close, uId, blogs }) {
         </div>
         <div className="comments_items">
           {dataComments[0]?.data.comments ? [...dataComments[0]?.data.comments].reverse().map(
-            ({ email, url, message, time }, inx) => (
+            ({ email, url, message, time, id }, inx, commentArr ) => (
               <div key={inx} className="comments_item">
                 <div className="comments_user_img">
                   <img src={url} alt={email} />
@@ -95,6 +116,13 @@ function Comments({ close, uId, blogs }) {
                     <p>{time}</p>
                   </div>
                 </div>
+                {
+                  location.pathname === "/approuter/admin/createblogs" 
+                  &&
+                  <div onClick={()=> commentDel(id, commentArr)} className="comment_trash">
+                    <FaTrashAlt/>
+                  </div>
+                }
               </div>
             )
           ) : <></>}

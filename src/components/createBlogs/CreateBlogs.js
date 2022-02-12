@@ -7,6 +7,7 @@ import {IoMdPhotos} from 'react-icons/io'
 import defaultImage from "../../assets/photos/default.jpg"
 import LoaderData from "../loader/LoaderData"
 import LoaderItem from "../loader/LoaderItem";
+import BlogCon from "../blogCon/BlogCon"
 
 
 function CreateBlogs() {
@@ -62,7 +63,7 @@ function CreateBlogs() {
     );
   };
 
-  const addDate = () => {
+  const addData = () => {
     db.collection("blogs").add({
       title,
       desc,
@@ -114,7 +115,7 @@ function CreateBlogs() {
 
           <button className={loading?"create_blogsBtn createBtnLeft":"create_blogsBtn"} disabled={loading}  onClick={uploadImage}>{loading? <LoaderItem/> : ""} <span>Upload image</span></button>
 
-          <button className="create_blogsBtn" disabled={url === ""} onClick={addDate}>Submit</button>
+          <button className="create_blogsBtn" disabled={url === ""} onClick={addData}>Submit</button>
         </div>
         <div className="create_blogsContainerRight">
             <div className={desc.length > 1200 ? "blog_conItem long" : "blog_conItem" }>
@@ -131,7 +132,10 @@ function CreateBlogs() {
       </div>
       <h2 className="create_blogsAll">All Blogs</h2>
       <div className="create_blogsGet">
-          {
+        {
+             data.length ? <BlogCon blogs={[...data].reverse()} func={{setmodalShow, setuid, admin: true}}/> : <LoaderData/>
+        }
+          {/* {
             data.length ?
             [...data].reverse()?.map((item,inx)=>(
                 <div key={inx} className={item.data.desc.length > 1200 ? "blog_conItem long" : "blog_conItem" }>
@@ -151,7 +155,7 @@ function CreateBlogs() {
                   
                  </div>
             )): <LoaderData/>
-          }
+          } */}
       </div>
       <div className={modalShow? "create_blogsModal ": "create_blogsModal modalHidden" }>
                         <div className="create_blogsModalCon">
