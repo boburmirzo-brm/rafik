@@ -26,6 +26,10 @@ function Login() {
     result && history.push("/approuter/admin/createblogs");
   };
 
+  const enterLogin = (e)=> {
+    if(e.keyCode === 13) return check();
+  }
+
   return (
     <div className="login">
       <div className="login_container">
@@ -43,6 +47,7 @@ function Login() {
           placeholder="Enter your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={(e)=> enterLogin(e) && check()}
         />
         <p
           style={involid ? { opacity: 1 } : { opacity: 0 }}
