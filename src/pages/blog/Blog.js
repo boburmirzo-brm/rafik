@@ -6,10 +6,10 @@ import Footer from '../../components/footer/Footer';
 import BlogCon from '../../components/blogCon/BlogCon';
 import {db} from "../../server/firebase"
 import LoaderData from '../../components/loader/LoaderData';
+import videoUrl from "../../assets/photos/video-portrait.mp4"
 
 function Blog() {
   const [blogs, setBlogs] = useState([])
-  const [videoUrl, setVideoUrl] = useState(null)
 
 
     useEffect(()=>{
@@ -21,11 +21,6 @@ function Blog() {
               }
             )))
         })
-    },[])
-    useEffect(()=>{
-      db.collection("videos").onSnapshot(item=>(
-          setVideoUrl(item.docs.map(i=> i.data())[1].video )
-      ))
     },[])
 
     // console.log(blogs)

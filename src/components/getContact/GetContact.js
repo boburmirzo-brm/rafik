@@ -11,9 +11,7 @@ function GetContact() {
   const [modalShow, setmodalShow] = useState(false);
   const [uid, setuid] = useState("");
 
-  modalShow
-    ? (document.body.style.overflow = "hidden")
-    : (document.body.style.overflow = "auto");
+  document.body.style.overflow = modalShow ? "hidden" : "auto";
 
   useEffect(() => {
     db.collection("message")

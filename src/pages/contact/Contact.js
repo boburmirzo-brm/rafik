@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import "./Contact.css";
 import img55 from "../../assets/photos/IMG_4632.JPG";
 import { db } from "../../server/firebase";
 import firebase from "firebase";
+
+
 
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [sendMes, setSendMes] = useState(false);
+
 
   const senMessage = (e) => {
     e.preventDefault();
