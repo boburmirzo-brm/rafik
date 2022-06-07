@@ -10896,13 +10896,6 @@ tar@^6.1.11:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-telebot@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/telebot/-/telebot-1.4.1.tgz#2223e6baa28e8107d0c7d8305e955b69eab7dde1"
-  integrity sha512-5EEwMWsWzdT5+d6eu1Zmm/2AQmEINeObciWHOa9/9rWa1aUZyokUH1WD0Ke0vv6nveY8dEIMoxyrcWS0z1lyAQ==
-  dependencies:
-    request "^2.88.2"
-
 temp-dir@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/temp-dir/-/temp-dir-1.0.0.tgz#0a7c0ea26d3a39afa7e0ebea9c1fc0bc4daa011d"
