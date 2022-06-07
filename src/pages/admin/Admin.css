@@ -3,8 +3,25 @@
     width: 100%;
     padding: 20px 100px;
 }
+.admin_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .admin_title{
     color: dodgerblue;
+}
+.admin_btn{
+    padding: 10px 24px;
+    background: crimson;
+    color:#fff;
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.admin_btn:hover{
+    opacity: .7;
 }
 .admin_navbar{
     padding-top: 20px;

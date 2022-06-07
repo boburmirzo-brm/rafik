@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useStateValue } from "../../context/stateprovider/StateProvider";
+import { auth } from "../../server/firebase"
 import "./Login.css";
 
 function Login() {
@@ -11,23 +12,37 @@ function Login() {
   // eslint-disable-next-line
   const [state, dispatch] = useStateValue();
 
-  let result =
-    process.env.REACT_APP_LOGIN === login &&
-    process.env.REACT_APP_PASSWORD === password;
 
-  const check = () => {
-    if (!result) {
-      setInvolid(true);
-    }
-    dispatch({
-      type: "CHECK",
-      user: result,
-    });
-    result && history.push("/approuter/admin/createblogs");
-  };
+  const loginUser = ()=>{
+      auth.signInWithEmailAndPassword(login, password)
+      .then(user => {
+          if(user) {
+              dispatch({
+                type: "CHECK",
+                user: user,
+              });
+              localStorage.setItem("admin", JSON.stringify(user))
+              history.push("/approuter/admin/createblogs");
+          }
+      })
+      .catch(error => {
+        setInvolid(true)
+        console.error(error)})
+  }
+
+  // const check = () => {
+  //   if (!result) {
+  //     setInvolid(true);
+  //   }
+  //   dispatch({
+  //     type: "CHECK",
+  //     user: result,
+  //   });
+  //   result && history.push("/approuter/admin/createblogs");
+  // };
 
   const enterLogin = (e)=> {
-    if(e.keyCode === 13) return check();
+    if(e.keyCode === 13) return loginUser();
   }
 
   return (
@@ -47,7 +62,7 @@ function Login() {
           placeholder="Enter your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          onKeyDown={(e)=> enterLogin(e) && check()}
+          onKeyDown={(e)=> enterLogin(e) && loginUser()}
         />
         <p
           style={involid ? { opacity: 1 } : { opacity: 0 }}
@@ -55,7 +70,7 @@ function Login() {
         >
           Login or Password is involid
         </p>
-        <button onClick={check}>Submit</button>
+        <button onClick={loginUser}>Submit</button>
       </div>
     </div>
   );

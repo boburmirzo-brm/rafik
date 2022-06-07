@@ -7,8 +7,8 @@ import Login from '../login/Login';
 function AppRouter() {
     const [{user}] = useStateValue()
     const {path, url} = useRouteMatch();
-    
-   return user ? (
+
+   return user || JSON.parse(localStorage.getItem("admin")) ? (
         <Switch>
             <Route path={`${url}/admin`} component={Admin} />
             <Redirect to={`${path}/admin`}/>
