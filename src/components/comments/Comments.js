@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 import firebase from "firebase";
 import {v4} from "uuid"
 import { FaTrashAlt } from "react-icons/fa";
+import img16 from "../../assets/photos/16.jpg"
 
 function Comments({ close, uId, blogs } ) {
   const [user] = useAuthState(auth);
@@ -55,7 +56,7 @@ function Comments({ close, uId, blogs } ) {
         ],
       })
       .then(() => {
-        console.log("successfully sent! ");
+        // console.log("successfully sent! ");
       })
       .catch((error) => {
         console.log("Error message:", error);
@@ -72,7 +73,7 @@ function Comments({ close, uId, blogs } ) {
       comments: comments.filter(item=> item.id !== id).reverse()
     })
     .then(() => {
-      console.log("successfully sent! ");
+      // console.log("successfully sent! ");
     })
     .catch((error) => {
       console.log("Error message:", error);
@@ -107,7 +108,7 @@ function Comments({ close, uId, blogs } ) {
             ({ email, url, message, time, id }, inx, commentArr ) => (
               <div key={inx} className="comments_item">
                 <div className="comments_user_img">
-                  <img src={url} alt={email} />
+                  <img src={url || img16} alt={email} />
                 </div>
                 <div className="comments_user_msg">
                   <p>{message}</p>

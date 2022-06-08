@@ -34,7 +34,7 @@ function GetContact() {
       .doc(id)
       .delete()
       .then(() => {
-        console.log("successfully deleted! ");
+        // console.log("successfully deleted! ");
       })
       .catch((error) => {
         console.log("Error removing document:", error);

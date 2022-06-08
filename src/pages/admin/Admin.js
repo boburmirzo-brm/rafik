@@ -11,6 +11,7 @@ const GetContact = React.lazy(() => import('../../components/getContact/GetConta
 function Admin() {
   const {path, url} = useRouteMatch();
   const history = useHistory();
+  // eslint-disable-next-line
   const [state, dispatch] = useStateValue();
 
   const signOut = ()=>{

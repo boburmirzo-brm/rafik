@@ -23,7 +23,6 @@ function Blog() {
         })
     },[])
 
-    // console.log(blogs)
   return <div className='blog'>
       <Video name="Blog" video={videoUrl}/>
           <div className="gallery_wrapperTitle">

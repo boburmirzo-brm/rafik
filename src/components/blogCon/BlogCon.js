@@ -28,7 +28,7 @@ function BlogCon({ blogs, func }) {
             likeCount: [...likeCount, user.email],
           })
           .then(() => {
-            console.log("successfully increased! ");
+            // console.log("successfully increased! ");
           })
           .catch((error) => {
             console.log("Error increasing document:", error);
@@ -42,7 +42,7 @@ function BlogCon({ blogs, func }) {
             likeCount: [...likeCount].filter((i) => i !== user.email),
           })
           .then(() => {
-            console.log("successfully decreased! ");
+            // console.log("successfully decreased! ");
           })
           .catch((error) => {
             console.log("Error increasing document:", error);

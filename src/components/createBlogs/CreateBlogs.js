@@ -79,7 +79,7 @@ function CreateBlogs() {
   const deleteBlog = (id)=>{
       setuid("")
       firebase.firestore().collection('blogs').doc(id).delete()
-      .then(()=>{console.log("successfully deleted! ")})
+      // .then(()=>{console.log("successfully deleted! ")})
       .catch((error)=>{ console.log("Error removing document:", error)})
   }
 
