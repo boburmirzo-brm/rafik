@@ -1,17 +1,14 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./Contact.css";
 import img55 from "../../assets/photos/IMG_4632.JPG";
 import { db } from "../../server/firebase";
 import firebase from "firebase";
-
-
 
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [sendMes, setSendMes] = useState(false);
-
 
   const senMessage = (e) => {
     e.preventDefault();
@@ -31,18 +28,21 @@ function Contact() {
   };
 
   const ctrlPlusEnter = (e) => {
-      if(e.ctrlKey && e.keyCode === 13){
-        senMessage(e)
-      }
-  }
-
+    if (e.ctrlKey && e.keyCode === 13) {
+      senMessage(e);
+    }
+  };
 
   return (
     <div className="contact">
       <h1 className="contact_title">Messages</h1>
       <div className="contact_container">
         <div className="contact_form">
-          <form onSubmit={senMessage} onKeyDown={(e)=> ctrlPlusEnter(e)} action="">
+          <form
+            onSubmit={senMessage}
+            onKeyDown={(e) => ctrlPlusEnter(e)}
+            action=""
+          >
             <div className="contact_formItem">
               <label htmlFor="">Your name:</label>
               <input
@@ -89,8 +89,8 @@ function Contact() {
           <img src={img55} alt="" />
         </div>
       </div>
-      <div className={sendMes ? "contact_modal anime" : "contact_modal"}>
-        <p>Message is sent</p>
+      <div className={!sendMes ? "contact_modal anime" : "contact_modal"}>
+        <p>Message is sent✅</p>
       </div>
     </div>
   );

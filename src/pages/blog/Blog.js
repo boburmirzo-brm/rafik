@@ -28,7 +28,7 @@ function Blog() {
       <Video name="Blog" video={videoUrl}/>
           <div className="gallery_wrapperTitle">
               <h1>Blogs</h1>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+              <p>Feel free to write your opinions📋 and click likes👍</p>
           </div>
           {
             blogs.length ? <BlogCon blogs={[...blogs].reverse()} func={{admin:false}}/> : <LoaderData/>
