@@ -15,7 +15,7 @@ function Admin() {
   const [state, dispatch] = useStateValue();
 
   const signOut = ()=>{
-    localStorage.removeItem("admin");
+    localStorage.clear();
     history.push("/approuter/login");
     dispatch({
       type: "CHECK",
