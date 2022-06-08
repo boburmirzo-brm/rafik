@@ -89,7 +89,7 @@ function Contact() {
           <img src={img55} alt="" />
         </div>
       </div>
-      <div className={!sendMes ? "contact_modal anime" : "contact_modal"}>
+      <div className={sendMes ? "contact_modal anime" : "contact_modal"}>
         <p>Message is sent✅</p>
       </div>
     </div>

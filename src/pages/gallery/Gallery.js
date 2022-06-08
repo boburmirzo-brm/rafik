@@ -15,7 +15,7 @@ import videoUrl10 from "../../assets/photos/video10.mp4";
 import videoUrl5 from "../../assets/photos/video3.mp4";
 
 // importing images from assets folder
-import img1 from "../../assets/photos/1pcmain.JPG";
+import img1 from "../../assets/photos/1pcmain.jpg";
 import img2 from "../../assets/photos/2.jpg";
 import img3 from "../../assets/photos/3.jpg";
 import img6 from "../../assets/photos/6.jpg";
