@@ -114,7 +114,7 @@
     opacity: 0;
 }
 .contact_modal.anime{
-    animation: conactModal 2s forwards;
+    animation: conactModal 2s cubic-bezier(.07,.94,.07,.94) forwards;
 }
 @keyframes conactModal {
     30%{
