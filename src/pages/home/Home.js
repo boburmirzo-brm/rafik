@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Carausel from '../../components/carausel/Carausel'
 import "./Home.css"
-import img1 from "../../assets/photos/pcmain.jpg"
+import img1 from "../../assets/photos/pcmain.JPG"
 import img4 from "../../assets/photos/7.jpg"
 import img12 from "../../assets/photos/12.jpg"
 import img02 from "../../assets/photos/2.jpg"

@@ -41,7 +41,6 @@ function Contact() {
           <form
             onSubmit={senMessage}
             onKeyDown={(e) => ctrlPlusEnter(e)}
-            action=""
           >
             <div className="contact_formItem">
               <label htmlFor="">Your name:</label>
@@ -69,7 +68,6 @@ function Contact() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="leave your message..."
-                onke
                 required
                 name=""
                 id=""
